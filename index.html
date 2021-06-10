@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>P-85</title>
+
+<script src="fabric.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class= "body_background">
+
+	<center>
+
+	<h2 class="btn-primary">SUPERHEROS</h2>
+
+	<div id="head_info" class= "btn-danger">
+		<h3>Current Width  = <span id= "current_width">30</span></h3>
+		<h3>Current Height  = <span id= "current_width">30</span></h3>
+	</div>
+<canvas width= "1000" height="600" id="c"></canvas>
+	</center>
+</body>
+<script>
+    var canvas = new fabric.Canvas('c');
+block_image_width=30;
+block_image_height = 30;
+player_x= 10;
+player_y= 10;
+var player_object = "";
+function player_update()
+{
+    fabric.Image.fromURL("PLAYER.png", function(Img)
+    {
+        player_object= Img;
+        player_object.scaleToWidth(150);
+        player_object.scaleToHeight(140);
+        player_object.set({
+            top:player_y,
+            left:player_x
+        });
+        canvas.add(player_object);
+    });
+}
+
+</script>
+</html>
